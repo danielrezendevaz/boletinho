@@ -7,6 +7,8 @@
   <title>Boletim Digital - 8º Ano</title>
   <!-- Vincula o nosso arquivo de estilos CSS -->
   <link rel="stylesheet" href="style.css">
+  <!-- Biblioteca Chart.js para renderização dos gráficos -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
@@ -62,6 +64,33 @@
           <p class="card-value">92%</p>
           <span class="card-tag">Frequência adequada</span>
         </div>
+      </section>
+
+      <!-- Área Visual de Gráficos em Grid -->
+      <section class="area-graficos">
+        <article class="grafico-card">
+          <h2>Média por disciplina</h2>
+          <div class="grafico-container grafico-container-alto">
+            <canvas id="graficoMediasDisciplinas"></canvas>
+          </div>
+        </article>
+
+        <article class="grafico-card">
+          <h2>Evolução da média geral</h2>
+          <div class="grafico-container">
+            <canvas id="graficoEvolucaoTrimestres"></canvas>
+          </div>
+        </article>
+
+        <article class="grafico-card" id="card-grafico-faltas">
+          <div class="grafico-card-header">
+            <h2>Faltas por trimestre</h2>
+            <span id="badge-perigo-faltas" class="badge-perigo" style="display: none;">Perigo</span>
+          </div>
+          <div class="grafico-container">
+            <canvas id="graficoFaltasTrimestres"></canvas>
+          </div>
+        </article>
       </section>
 
       <!-- Área da tabela responsiva de disciplinas -->
