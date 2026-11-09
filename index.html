@@ -14,57 +14,76 @@
     <!-- Cabeçalho principal com título e subtítulo -->
     <header class="header">
       <h1>Boletim Digital</h1>
-      <p class="subtitle">8º Ano | Estudante Exemplo</p>
+      <p class="subtitle">8º Ano | Turma 8B | N.º 7</p>
     </header>
 
-    <!-- Área superior com os 5 cards de resumo visual -->
-    <section class="cards-grid">
-      <div class="card">
-        <h3>Média Geral</h3>
-        <p id="card-media-geral" class="card-value">—</p>
+    <!-- Área de login por PIN -->
+    <section id="area-login" class="login-box">
+      <h2>Acesso ao Boletim</h2>
+      <p>Digite seu PIN para visualizar e editar os dados.</p>
+      <div class="login-form">
+        <input type="password" id="pin-input" placeholder="Digite seu PIN" maxlength="20" autocomplete="off">
+        <button type="button" id="btn-entrar" onclick="fazerLogin()">Entrar</button>
       </div>
-
-      <div class="card">
-        <h3>Total de Faltas</h3>
-        <p id="card-total-faltas" class="card-value">—</p>
-      </div>
-
-      <div class="card">
-        <h3>Bom Desempenho</h3>
-        <p id="card-bom-desempenho" class="card-value">—</p>
-      </div>
-
-      <div class="card">
-        <h3>Precisam de Atenção</h3>
-        <p id="card-atencao" class="card-value">—</p>
-      </div>
-
-      <div class="card">
-        <h3>Frequência Geral</h3>
-        <p class="card-value">92%</p>
-        <span class="card-tag">Frequência adequada</span>
-      </div>
+      <p id="mensagem-status" class="status-msg"></p>
     </section>
 
-    <!-- Área da tabela responsiva de disciplinas -->
-    <section class="table-container">
-      <table>
-        <thead>
-          <tr>
-            <th>Disciplina</th>
-            <th>1º Tri</th>
-            <th>2º Tri</th>
-            <th>3º Tri</th>
-            <th>Média</th>
-            <th>Faltas</th>
-            <th>Situação</th>
-          </tr>
-        </thead>
-        <!-- O corpo da tabela será preenchido automaticamente pelo JavaScript -->
-        <tbody id="tabela-corpo">
-        </tbody>
-      </table>
-    </section>
+    <!-- Painel Principal do Boletim (inicialmente escondido) -->
+    <div id="conteudo-boletim" style="display: none;">
+      <div class="toolbar">
+        <button type="button" id="btn-alternar-edicao" onclick="alternarModoEdicao()" class="btn-acao">Alterar dados</button>
+        <p id="mensagem-salvar" class="status-msg"></p>
+      </div>
+
+      <!-- Área superior com os 5 cards de resumo visual -->
+      <section class="cards-grid">
+        <div class="card">
+          <h3>Média Geral</h3>
+          <p id="card-media-geral" class="card-value">—</p>
+        </div>
+
+        <div class="card">
+          <h3>Total de Faltas</h3>
+          <p id="card-total-faltas" class="card-value">—</p>
+        </div>
+
+        <div class="card">
+          <h3>Bom Desempenho</h3>
+          <p id="card-bom-desempenho" class="card-value">—</p>
+        </div>
+
+        <div class="card">
+          <h3>Precisam de Atenção</h3>
+          <p id="card-atencao" class="card-value">—</p>
+        </div>
+
+        <div class="card">
+          <h3>Frequência Geral</h3>
+          <p class="card-value">92%</p>
+          <span class="card-tag">Frequência adequada</span>
+        </div>
+      </section>
+
+      <!-- Área da tabela responsiva de disciplinas -->
+      <section class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Disciplina</th>
+              <th>1º Tri</th>
+              <th>2º Tri</th>
+              <th>3º Tri</th>
+              <th>Média</th>
+              <th>Faltas</th>
+              <th>Situação</th>
+            </tr>
+          </thead>
+          <!-- O corpo da tabela será preenchido automaticamente pelo JavaScript -->
+          <tbody id="tabela-corpo">
+          </tbody>
+        </table>
+      </section>
+    </div>
   </div>
 
   <!-- Vincula o nosso script de lógica em JavaScript -->

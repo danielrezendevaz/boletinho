@@ -9,6 +9,7 @@
   --border-glow: #06b6d4;         /* Borda brilhante ciano */
   --status-good: #10b981;         /* Verde para bom desempenho */
   --status-warning: #f59e0b;      /* Amarelo/Laranja para atenção */
+  --status-danger: #ef4444;       /* Vermelho para erros */
 }
 
 /* Zerando margens e configurando a fonte */
@@ -146,4 +147,141 @@ tr:hover {
     padding: 8px 10px;
     font-size: 0.85rem;
   }
+}
+
+/* Estilos Adicionados para Login e Edição */
+.login-box {
+  background-color: var(--card-bg);
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid var(--border-glow);
+  box-shadow: 0 0 12px rgba(6, 182, 212, 0.3);
+  max-width: 400px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.login-box h2 {
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.login-box p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+.login-form {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.login-form input {
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(15, 23, 42, 0.6);
+  color: var(--text-color);
+  font-size: 1rem;
+  outline: none;
+  width: 60%;
+}
+
+.login-form input:focus {
+  border-color: var(--accent-color);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+#btn-entrar {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 10px 18px;
+}
+
+#btn-entrar:hover {
+  background-color: #1d4ed8;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.btn-acao {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 0.95rem;
+}
+
+.btn-acao:hover {
+  background-color: #1d4ed8;
+}
+
+.btn-salvar {
+  background-color: var(--status-good);
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 0.95rem;
+}
+
+.btn-salvar:hover {
+  background-color: #059669;
+}
+
+.status-msg {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  min-height: 20px;
+}
+
+.status-erro {
+  color: var(--status-danger);
+}
+
+.status-sucesso {
+  color: var(--status-good);
+}
+
+.status-info {
+  color: var(--accent-color);
+}
+
+.input-edicao {
+  width: 55px;
+  padding: 6px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: #0f172a;
+  color: #fff;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.input-edicao:focus {
+  border-color: var(--accent-color);
+  outline: none;
+}
+
+.input-invalido {
+  border: 2px solid var(--status-danger) !important;
+  background-color: rgba(239, 68, 68, 0.15) !important;
+}
+
+.painel-faltas-edicao {
+  display: flex;
+  gap: 4px;
+  align-items: center;
 }
